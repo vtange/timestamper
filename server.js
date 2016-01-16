@@ -9,6 +9,9 @@
     //use static middleware in express to load static page directory
     app.use(express.static(path.join(__dirname, 'public')));
 
+	//load routes
+	require('./routes.js')(app);
+
 //let Heroku/other host set port, else default 3000, and then listen
 var port     = process.env.PORT || 3000;
 app.listen(port);
