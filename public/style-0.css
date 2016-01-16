@@ -39,9 +39,7 @@ body {
 }
 
 .centered{
-	position: absolute;
-    left: 50%;
-    margin-left: -50px;
+	text-align: center;
 }
 .vert-centered{
 	position: absolute;
@@ -72,4 +70,9 @@ ul{
 	vertical-align: text-top;
 	display: inline-block;
 	width:50%;
+}
+
+/* CUSTOM */
+.searchr{
+	width:40%;
 }
