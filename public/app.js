@@ -1,6 +1,6 @@
 (function() {
     //start of function
-  var app = angular.module('WikiSearch', []);
+  var app = angular.module('timestamper', []);
 
 app.factory('memory', function($http){
 /*
