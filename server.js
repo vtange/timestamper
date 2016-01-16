@@ -6,8 +6,10 @@
 
     var app = express();
 
-    //use static middleware in express to load static page directory
+    //always use CSS and JS in public to go with ejs output
     app.use(express.static(path.join(__dirname, 'public')));
+	// set the view engine to ejs
+	app.set('view engine', 'ejs');
 
 	//load routes
 	require('./routes.js')(app);
