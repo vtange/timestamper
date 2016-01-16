@@ -8,4 +8,8 @@ module.exports = function(app) {
 		console.log("got '/'")
         res.render('index.ejs'); // load the index.ejs file
     });
+	app.get('/:something', function(req, res) {
+		console.log(req.params.something)
+        res.render('index.ejs'); // load the index.ejs file
+    });
 }
