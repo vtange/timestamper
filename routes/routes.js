@@ -11,7 +11,7 @@ module.exports = function(app) {
 	app.get('/:something', function(req, res) {
 		var query = req.params.something;
 		var allNums = /^\d+$/;
-		var regMonths = /(January|February|March|April|May|June|July|August|September|October|November|December)/;
+		var regMonths = /(January|February|March|April|May|June|July|August|September|October|November|December)/i;
 		var months = ['January ','February ','March ','April ','May ','June ','July ','August ','September ','October ','November ','December '];
 		var json = {
 			"unix":null,
