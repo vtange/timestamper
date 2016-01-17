@@ -9,7 +9,21 @@ module.exports = function(app) {
         res.render('index.ejs'); // load the index.ejs file
     });
 	app.get('/:something', function(req, res) {
-		console.log(req.params.something)
-        res.render('index.ejs'); // load the index.ejs file
+		var query = req.params.something;
+		var reg = /^\d+$/;
+		var json = {}
+		if(reg.test(query)){	//query is all numbers
+			json = {
+				"unix":query,
+				"natural":"notime"
+			}
+		}
+		else{						//query is not all numbers
+			json = {
+				"unix":0,
+				"natural":query
+			}
+		}
+        res.send(json); // load the index.ejs file
     });
 }
