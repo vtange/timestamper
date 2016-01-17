@@ -4,8 +4,8 @@
 
 app.controller('MainCtrl', ['$scope', '$http', '$window', function($scope, $http, $window){
 	$scope.getJSON = function(){
-		var baseUrl = "https://timestamper.herokuapp.com/";
-		$window.open(baseUrl+$scope.userInputTime)
+		//$window.location.href is self
+		$window.open($window.location.href+$scope.userInputTime)
 		
 		// doesn't work, only gets more data
 		//$http.get(baseUrl+$scope.userInputTime)
