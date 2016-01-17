@@ -2,29 +2,14 @@
     //start of function
   var app = angular.module('timestamper', []);
 
-app.factory('memory', function($http){
-/*
-  var baseUrl = "http://www.freecodecamp.com/news/hot/";
-*/
-  var storage = {};
- storage.datadata = [];
-/*
-    $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-    $http.jsonp(baseUrl + "?callback=JSON_CALLBACK")
-    .success(function(data1) {
-        storage.datadata = data1;
-     })
-    .error(function(data1) {
-        storage.datadata = [];
-        console.log("error0");
-     });
-    //end info pulling
-*/
-  return storage;
-});//end of service
-
-app.controller('MainCtrl', ['$scope', 'memory', function($scope, memory){
-    $scope.storage = memory; // load service
+app.controller('MainCtrl', ['$scope', '$http', '$window', function($scope, $http, $window){
+	$scope.getJSON = function(){
+		var baseUrl = "https://timestamper.herokuapp.com/";
+		$window.open(baseUrl+$scope.userInputTime)
+		
+		// doesn't work, only gets more data
+		//$http.get(baseUrl+$scope.userInputTime)
+	}
 
 }]);//end of controller
   //end of function

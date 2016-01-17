@@ -7,9 +7,12 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
-<body>
+<body data-ng-app="timestamper" data-ng-controller="MainCtrl">
   <div class="content centered" style="top:30%">
-<input class="searchr" type="text" placeholder="Give me a time."/>
+	  <form data-ng-submit="getJSON()">
+		  <input class="searchr" type="text" placeholder="Give me a time." data-ng-model="userInputTime" />
+	  </form>
+
       
       
       
