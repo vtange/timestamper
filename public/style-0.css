@@ -9,38 +9,24 @@ body {
 }
 .content {
   position: relative;
-  height: 100%;
   width:100%;
 }
-
 .centered{
 	text-align: center;
 }
 /* BASICS ^ */
-h1{
-  margin: 0;
-}
-ul{
-  margin: 0;
-	padding: 0;
-}
 /* RESET */
-.tab{
-	background: #fff;
-	padding:10px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	margin: 5px;
-	cursor: pointer;
-}
-.chunk{
-	vertical-align: text-top;
-	display: inline-block;
-	width:50%;
-}
-
 /* CUSTOM */
+.gallery{
+	display:inline-flex;
+  	flex-wrap: wrap;
+}
 .searchr{
+	display:inline-block;
+	vertical-align: text-top;
+	border:1px solid white;
+	padding:10px 10px 10px 10px;
+	border-radius: 10px;
 	width:40%;
 	height:2rem;
 	font-size: 1.25rem;
