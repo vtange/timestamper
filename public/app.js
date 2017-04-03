@@ -3,9 +3,11 @@
   var app = angular.module('timestamper', []);
 
 app.controller('MainCtrl', ['$scope', '$http', '$window', function($scope, $http, $window){
+	$scope.lastResult;
 	$scope.input = {};
 	$scope.arrTimes = [];
 	$scope.getJSON = function(){
+		$scope.lastResult = $scope.result;
 		$scope.arrTimes = [];
 		$http.post($window.location.href+"search",$scope.input).success(function(data){
 			if(!data.unix||!data.natural)
@@ -13,6 +15,7 @@ app.controller('MainCtrl', ['$scope', '$http', '$window', function($scope, $http
 				$scope.result = {natural:"Bad input on search."};
 			}
 			$scope.result = data;
+			$scope.input.userInputTime = data.unix;
 			var time = moment(data.natural);
 			var tzs = [
 		"US/Alaska",

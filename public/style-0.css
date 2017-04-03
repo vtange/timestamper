@@ -10,6 +10,7 @@ body {
 .content {
   position: relative;
   width:100%;
+  top:5%;
 }
 .centered{
 	text-align: center;
@@ -34,6 +35,7 @@ body {
 table {
 	margin: auto;
 	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 td {

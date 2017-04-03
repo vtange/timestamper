@@ -21,7 +21,7 @@ module.exports = function(app) {
 			var date = new Date(query*1000);
 			while(date.getFullYear() > 2050)
 			{
-				query = query.substring(0,query.length-2);
+				query = query.substring(0,query.length-1);
 				date = new Date(query*1000);
 			}
 			json = {
