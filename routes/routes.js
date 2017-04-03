@@ -8,8 +8,8 @@ module.exports = function(app) {
 		console.log("got '/'")
         res.render('index.ejs'); // load the index.ejs file
     });
-	app.get('/:something', function(req, res) {
-		var query = req.params.something;
+	app.post('/search', function(req, res) {
+		var query = req.body.userInputTime;
 		var allNums = /^\d+$/;
 		var regMonths = /(January|February|March|April|May|June|July|August|September|October|November|December)/i;
 		var months = ['January ','February ','March ','April ','May ','June ','July ','August ','September ','October ','November ','December '];
@@ -19,14 +19,14 @@ module.exports = function(app) {
 		};
 		if(allNums.test(query)){									//query is all numbers
 			var date = new Date(query*1000);
-			var year = date.getFullYear();
-			var month = months[date.getMonth()];
-			var date = date.getDate();
-			// Will display time in 10:30:23 format
-			var natural = month + date + ', ' + year;
+			while(date.getFullYear() > 2050)
+			{
+				query = query.substring(0,query.length-2);
+				date = new Date(query*1000);
+			}
 			json = {
 				"unix":parseInt(query,10),
-				"natural":natural
+				"natural":date.toUTCString()
 			}
 		}
 		else if(query.search(regMonths)!==-1){						//query has a month
